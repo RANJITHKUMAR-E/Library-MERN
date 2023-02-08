@@ -1,7 +1,7 @@
 const {default: mongoose}=require("mongoose");
 
 const userSchema=mongoose.Schema({
-    name: {type: String, require},
+    userName: {type: String, require},
     rollNo: {type: String, require},
     password: {type: String, require},
     eMail: {type: String, require},
@@ -12,6 +12,8 @@ const userSchema=mongoose.Schema({
     booksBorrowed: {type: Array, require},
     pendingFine: {type: Number, require},
     isAdmin: {type: Boolean,require,default:false}
+}, {
+    timestamps: true,
 })
 
-module.exports=mongoose.model("Users", userSchema);
+module.exports=mongoose.model("users", userSchema);
