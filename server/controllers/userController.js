@@ -1,11 +1,38 @@
-exports.getAllUser=(req, res) =>
+const userModel=require("../models/userModel");
+
+exports.getAllUser=async (req, res) =>
 {
-    res.status(200).json({status : "Get all users Done"});
+    try {
+        const users=await userModel.find({})
+        res.status(200).json({
+            status: "Get all users Done",
+            data: users
+        });
+    } catch(error) {
+        console.log(error);
+        res.status(400).json({
+            status: "Failed 😥",
+            error: error
+        });
+    }
 }
 
-exports.getUser=(req, res) =>
+exports.getUser=async (req, res) =>
 {
-    res.status(200).json({status: "Get user Done"});
+    try {
+        const id=req.params.id
+        const user=await userModel.find({_id: id})
+        res.status(200).json({
+            status: "success",
+            data: user
+        });
+    } catch(error) {
+        console.log(error);
+        res.status(400).json({
+            status: "Failed 😥",
+            error: error
+        });
+    }
 }
 
 exports.createUser=(req, res) =>
