@@ -12,7 +12,7 @@
 2. User :
 	userId
 	name
-	rollNo
+	rollNo		//Primary key
 	password
 	eMail
 	Mobile
