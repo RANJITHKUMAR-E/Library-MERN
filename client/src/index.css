@@ -70,8 +70,10 @@ h1 {
 }
 
 select {
-  box-shadow: none m !important;
-  border-color: black m !important;
+  margin-top: 20px !important;
+  box-shadow: none !important;
+  padding: 2px;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .fa-plus {
   color: green;
