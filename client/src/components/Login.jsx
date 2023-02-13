@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import React, { Component } from "react";
 
 const Container=styled.div`
     height : 100vh;
@@ -120,4 +121,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Login;

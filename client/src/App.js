@@ -1,9 +1,15 @@
-import Home from "./pages/Home";
+import React from 'react';
+import bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
-
+import Login from './components/Login';
+import Navbar from './components/Navbar';
 
 const App = () => {
-  return <Home/>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 };
 
 export default App;
