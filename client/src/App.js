@@ -6,7 +6,7 @@ import LandingPage from "./pages/landingPage";
 
 
 const App = () => {
-  return <LandingPage/>;
+  return <Login/>;
 };
 
 export default App;
