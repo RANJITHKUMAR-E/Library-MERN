@@ -4,6 +4,7 @@ const userRoute=require("./routes/userRoute")
 const bookRoute = require('./routes/bookRoute')
 
 const app=express();
+app.use(express.json())
 
 app.use("/api/user",userRoute)
 app.use('/api/book',bookRoute)

@@ -9,11 +9,14 @@ router.post("/signup", signup);
 
 router.route("/")
     .get(userController.getAllUser)
-    .post(userController.createUser)
+    .post(userController.createUser) 
 
 router.route("/:id")
     .get(userController.getUser)
     .patch(userController.updateUser)
     .delete(userController.deleteUser)
+
+router.patch("/profile/:id", userController.updateProfile);
+router.patch("/password/:id", userController.updatePassword);
 
 module.exports=router;
