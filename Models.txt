@@ -1,9 +1,11 @@
 1. Book :
 	book id 
 	book name
+	description
 	bookImage
 	category
 	author name
+	pages
 	published date
 	added date
 	no of books
