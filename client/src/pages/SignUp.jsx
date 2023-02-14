@@ -15,7 +15,7 @@ export default function SignUpPage() {
             <h2 className="m-8" style={{   fontSize: "25px" }}>
             ONLINE LIBRARY MANAGEMENT SYSTEM
             </h2><br />   
-                <div className="col-md-5 mt-3 text-left  p-3 mb-5 ">
+                <div className="col-md-5 mt-3 text-left  p-3 mb-5 w-100">
                 <img src="https://iili.io/HEWQdMX.png" alt="..."  class="img-fluid img-responsive" />
                 </div>
         </div>

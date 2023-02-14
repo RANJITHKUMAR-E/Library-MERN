@@ -48,25 +48,25 @@ h1 {
 }
 
 .btn {
-  align-items: center;
-  width: 200px;
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 100px;
-  box-sizing: border-box;
-  color: #000000;
-  cursor: pointer;
-  display: inline-flex;
-  font-size: 1rem;
-  height: auto;
-  justify-content: center;
-  padding: 6px 20px;
-  position: relative;
-  text-align: center;
-  vertical-align: top;
-  border: 2px solid black;
+  align-items: center !important;
+  width: 200px ;
+  background-color: rgba(255, 255, 255, 1) ;
+  border-radius: 100px !important;
+  box-sizing: border-box !important;
+  color: #000000 ;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  font-size: 1rem !important;
+  height: auto ;
+  justify-content: center ;
+  padding: 6px 20px ;
+  position: relative ;
+  text-align: center !important;
+  vertical-align: top ;
 }
 .btn:hover{
-  background-color: rgb(105, 107, 199);
+  color: white !important;
+  background-color: rgb(105, 107, 199) !important;
 }
 
 select {
@@ -90,8 +90,8 @@ select {
 }
 
 input {
-  margin-top: 20px !important;
+  margin-top: 20px ;
   box-shadow: none !important;
   padding: 2px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4) ;
 }
