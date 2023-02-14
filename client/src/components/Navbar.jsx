@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+import React from 'react'
+
+const navbar = () => {
+    return (
+        <div>navbar</div>
+    )
+}
+
+export default navbar
+=======
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -157,3 +168,4 @@ function Navbar() {
   );
 }
 export default Navbar;
+>>>>>>> origin/Ranjith
