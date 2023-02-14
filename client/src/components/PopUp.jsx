@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap'
+import { Modal, Button } from "react-bootstrap";
 function ModalDialog() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);

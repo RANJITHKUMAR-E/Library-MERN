@@ -6,6 +6,9 @@ const bookRoute = require('./routes/bookRoute')
 const app=express();
 app.use(express.json())
 
+var cors=require('cors')
+app.use(cors())
+
 app.use("/api/user",userRoute)
 app.use('/api/book',bookRoute)
 
