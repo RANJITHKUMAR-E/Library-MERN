@@ -12,10 +12,13 @@ import Navbar from './components/Navbar';
 const App=() =>
 {
   return (
-    <>
-      <SignUp />
-    </>
-  );
+    // <Router>
+    //   <Route path='/' exact component={<Home/>}></Route>
+    //   <Route path='/login' exact component={<Login/>}></Route>      
+    //   <Route path='/signup' exact component={<SignUp/>}></Route>
+    // </Router>
+    <Home />
+  )
 };
 
 export default App;

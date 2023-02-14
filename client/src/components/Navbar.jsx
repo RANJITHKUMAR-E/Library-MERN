@@ -11,7 +11,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Student", "Book", "Your Library", "History"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
