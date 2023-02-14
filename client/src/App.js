@@ -9,6 +9,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import PopUp from './components/PopUp';
+import Profile from './pages/Profile'; 
+import AddBook from './pages/Admin/AddBook';
+import BookDetailedView from './pages/BookDetailedView';
 
 
 const App = () => {
@@ -18,7 +22,7 @@ const App = () => {
     //   <Route path='/login' exact component={<Login/>}></Route>      
     //   <Route path='/signup' exact component={<SignUp/>}></Route>
     // </Router>
-    <Home/>
+    <AddBook/>
   )
 };
 
