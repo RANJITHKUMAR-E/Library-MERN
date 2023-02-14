@@ -11,8 +11,8 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 
-const pages = ["Student", "Book", "Your Library","History"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = ["Books", "Your Library","History","Contact Us"];
+const settings = ["Profile", "Dashboard", "Logout"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
