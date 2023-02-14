@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 import React from "react";
-=======
->>>>>>> origin/Ranjith
-import React from 'react'
+
 
 import styled from "styled-components"
 
@@ -113,9 +108,4 @@ const Home = () => {
 )
 }
 
-<<<<<<< HEAD
 export default Home
-=======
-export default Home
->>>>>>> origin/Mukilan
->>>>>>> origin/Ranjith

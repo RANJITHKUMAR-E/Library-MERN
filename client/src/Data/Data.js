@@ -1,11 +1,17 @@
-
+import image from "../images/book.png"
 export const data = [
     {
-        img: "../images/book.png",
+        img: image,
     },
     {
-        img: "../images/book.png",
+        img: image,
+    },
+    {
+        img: image,
+    },
+    {
+        img: image,
     },
 ];
 
-
+ 
