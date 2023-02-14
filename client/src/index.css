@@ -83,7 +83,7 @@ h1 {
 }
 .btn:hover{
   color: white !important;
-  background-color: rgb(105, 107, 199) !important;
+  background-color: #1976d2 !important;
 }
 
 select {
