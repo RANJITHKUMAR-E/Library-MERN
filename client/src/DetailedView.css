@@ -1,0 +1,34 @@
+.book-detailed-view{
+    background-color: #C3EDF6;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+.back-icon{
+    transform: scale(0.6);
+    margin-top: -8rem;
+    margin-left: 7px;
+    
+}
+
+.book-image{
+    width: 50%;
+    margin-top: 12rem;
+    margin-left: -6rem;
+}
+
+.book-image>img{
+    transform: scale(1.5);
+}
+
+.book-details{
+    margin-top: 4rem;
+    height: 450px;
+    width: 420px;
+}
+
+.row{
+    font-size: 18px;
+    font-weight: 600;
+}
