@@ -2,6 +2,7 @@ import React from "react";
 
 
 import styled from "styled-components"
+import Login from "./Login";
 
 const Container=styled.div`
         
@@ -90,7 +91,7 @@ const Button=styled.button`
 const Home = () => {
 return (
         <>
-        <Navbar/>
+        <Login/>
         </>
 )
 }
