@@ -1,111 +1,77 @@
 import React from "react";
+import {data} from '../Data/Data.js';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Navbar from "../components/Navbar.jsx";
+// import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 
-
-import styled from "styled-components"
-
-const Container=styled.div`
-        
-        height : 100vh;
-        padding:28px;
-        background: 
-        url("https://iili.io/HEC6cZB.png") center;
-        background-size: cover;
-        display : flex;
-        align-items : center;
-        justify-content: center;
-
-`;
-
-const TopWrapper=styled.div`
-        width: 65%;
-        height: 20px;
-        padding: 20px;
-        background: 
-        url("https://iili.io/HEnpLUQ.png") left ;
-        position:absolute;
-        background-repeat : no-repeat;
-        margin-top: -490px;
-        background-color: rgba(180, 230, 252, 1);
-        align-items : center;
-        justify-content: center;
-`;
-
-const TopText=styled.div`
-        padding:2px;
-        margin-left:250px;
-        font-size: 20px;
-        font-weight: bold;
-`;
-
-
-const LWrapper=styled.div`
-        width: 20%;
-        height: 8cm;
-        padding: 20px;
-        background:url ("https://iili.io/HEnpLUQ.png") center;
-        background-color: rgba(240, 228, 228, 0.83);
-`;
-
-const RWrapper=styled.div`
-        width: 20%;
-        height: 8cm;
-        padding: 20px;
-        margin-left:4cm;
-        background-color: rgba(240, 228, 228, 0.83);
-`;
-
-const Admin=styled.h1`
-        background: 
-        url("https://iili.io/HEn3Hn1.png") center;
-        height:5cm;
-        width:5cm;
-        background-size: cover;
-        margin-left:35px;
-`;
-
-const User=styled.h1`
-        background: 
-        url("https://iili.io/HEn2yZP.png") center;
-        height:5cm;
-        width:5cm;
-        background-size: cover;
-        margin-left:35px;
-`;
-
-
-
-const Button=styled.button`
-        width: 40%;
-        border: 2px solid black;
-        border-radius:50%;
-        padding: 15px 20px;
-        background-color: white;
-        color: black;
-        cursor: pointer;
-        margin-left:78px;
-        margin-bottom: 10px;
-`;
-
-
+// import '../App.css'
 const Home = () => {
-     return (
-        <Container>
-        <TopWrapper>
-                <TopText>
-                ONLINE LIBRARY MANAGEMENT SYSTEM
-                </TopText>
-        </TopWrapper>
-        <LWrapper>
-        <Admin/>
-                <Button>Admin Login</Button>
-        </LWrapper>
-
-        <RWrapper>
-        <User/>
-                <Button>Student Login</Button>
-        </RWrapper>
-        </Container>
-)
+         var settings = {
+      dots: true,
+      infinite: false,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      initialSlide: 0,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    };
+     return (    
+           
+       <div>
+       <Navbar/>
+        <h2 className="home-heading">New and Trending</h2>
+        <div className="book-content">
+        <Slider {...settings}>
+        {data.map((item) => (
+                <div className="card">
+                <div className="card-top">
+                      <img src={item.bookImage} alt={item.bookName} />
+                      <h1>{item.title}</h1>
+                </div>
+                <div className="card-bottom">
+                        <h3>{item.price}</h3>
+                        <p>{item.category}</p>
+                </div>
+                </div>
+        ))}
+  
+        </Slider>
+        </div>
+        
+       
+       </div>
+        );
 }
+
+       
+
+
 
 export default Home

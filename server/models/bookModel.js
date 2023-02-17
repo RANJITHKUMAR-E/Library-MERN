@@ -6,6 +6,7 @@ const bookSchema=mongoose.Schema({
     bookImage:{type:String,require},
     category:{type:String,require},
     authorName:{type:String,require},
+    pages: {type: String, require},
     publishedDate:{type:String,require},
     addedDate:{type:String,require},
     bookCount:{type:Number,require},

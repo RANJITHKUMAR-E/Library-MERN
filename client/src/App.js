@@ -25,6 +25,7 @@ const App=() =>
           <Route path="/library" element={<Library/>}/>
           <Route path="/landingpage" element={<LandingPage/>}/>
           <Route path="/history" element={<History/>}/>
+          <Route path="/home" element={<Home/>}/>
          </Routes>
     </div>
     </BrowserRouter>
