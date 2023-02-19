@@ -33,6 +33,21 @@ function Navbar() {
     setAnchorElUser(null);
   };
 
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location = "/login";
+  };
+
+  const showProfile = () => {
+    window.location = "/profile";
+  };
+
+  const showDashboard = () => {
+    window.location = "/dashboard";
+  };
+
+  const user = JSON.parse(localStorage.getItem("userData"));
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -125,7 +140,8 @@ function Navbar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                {}
+                <Avatar alt="Remy Sharp" src="" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -144,11 +160,15 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={showProfile}>
+                <Typography textAlign="center">Profile</Typography>
+              </MenuItem>
+              <MenuItem onClick={showDashboard}>
+                <Typography textAlign="center">Dashboard</Typography>
+              </MenuItem>
+              <MenuItem onClick={handleLogout}>
+                <Typography textAlign="center">Logout</Typography>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
