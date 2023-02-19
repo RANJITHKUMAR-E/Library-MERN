@@ -24,10 +24,8 @@ exports.createBook=async(req, res) =>
     try{
         const newBook=new bookModel(data);
         await newBook.save();
-        const token=jwt.sign({bookId: data.bookId}, process.env.JWT_KEY, {expiresIn: process.env.JWT_EXPIRES})
         res.status(200).json({
             message: "Book Created successfully 😌",
-            token,
             data: data,
         });
     }
@@ -42,7 +40,7 @@ exports.createBook=async(req, res) =>
 exports.getBook=async(req, res) =>
 {
     try{
-        const book=await bookModel.find({bookId:req.params.id})
+        const book=await bookModel.find({_id: req.params.id})
         res.status(200).json({
             status:"Success ",
             data:book
@@ -68,12 +66,10 @@ exports.updateBook=async(req, res) =>
             })
         }
 
-        await bookModel.updateOne({_id: req.params.id}, data, {upsert: true})
-        const token=jwt.sign({bookId: data.bookId}, process.env.JWT_KEY, {expiresIn: process.env.JWT_EXPIRES})
+        const resp=await bookModel.updateOne({_id: req.params.id}, data, {upsert: true})
         res.status(200).json({
             message: "Book Updated successfully 😌",
-            token,
-            data: data
+            data: resp
         });
     } catch(error) {
         console.log(error);

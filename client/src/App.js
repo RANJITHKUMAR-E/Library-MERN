@@ -1,36 +1,30 @@
 import React from 'react';
+import {BrowserRouter, Routes, Route, Link, Switch, Router} from 'react-router-dom'
+import "bootstrap"
 import bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import { ReactDOM } from 'react';
-import Home from "./pages/Home";
-import {BrowserRouter,Routes,Route} from 'react-router-dom';
+
 import './App.css';
-import Login from "./pages/Login";
+import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
 import LandingPage from "./pages/landingPage";
-import History from './pages/History';
+import Login from './components/Login';
+import Navbar from './components/Navbar';
 
-import "bootstrap"
-import Library from './pages/Library';
 
 const App=() =>
 {
   return (
     <>
-    <div className="App">
+      <Navbar />
       <BrowserRouter>
-         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/signup" element={<SignUp/>}/>
-          <Route path="/library" element={<Library/>}/>
-          <Route path="/landingpage" element={<LandingPage/>}/>
-          <Route path="/history" element={<History/>}/>
-         </Routes>
-    
-    </BrowserRouter>
-      </div>
+        <Routes>
+          <Route path="/" exact element={<Login />} />
+          <Route path="/login" exact element={<Login />} />
+          <Route path="/signup" exact element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
     </>
-  );
+  )
 };
 
 export default App;
