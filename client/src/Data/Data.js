@@ -1,29 +1,5 @@
 import image from "../images/book.png"
 export const data = [
-    // {
-    //     img: image,
-    // },
-    // {
-    //     img: image,
-    // },
-    // {
-    //     img: image,
-    // },
-    // {
-    //     img: image,
-    // },
-    {
-        bookName:"Think Straight: Change your thoughts, Change your life ",
-        description:"THINK STRAIGHT reveals the recipe for taking control of your mind so you can improve your life, career, relationships, business. I wrote this little book in a way that you can read it more than once. And I hope that this book serves as an anchor to you--especially during trying times.",
-        bookImage:"https://m.media-amazon.com/images/I/41JoC4r8JDL._SX322_BO1,204,203,200_.jpg",
-        category:"Health, Family & Personal Development",
-        authorName:"Penguin",
-        pages:"132",
-        publishedDate:"26 October 2020",
-        addeddate:"4 November 2020",
-        bookCount:150,
-        price:111
-   },
    
    {
         bookName:"The Little Black Book for Stunning Success",
@@ -142,7 +118,20 @@ export const data = [
         addeddate:"29 May 2022",
         bookCount:190,
         price:157
-   }
+   },
+   {
+     bookName:"Think Straight: Change your thoughts, Change your life ",
+     description:"THINK STRAIGHT reveals the recipe for taking control of your mind so you can improve your life, career, relationships, business. I wrote this little book in a way that you can read it more than once. And I hope that this book serves as an anchor to you--especially during trying times.",
+     bookImage:"https://m.media-amazon.com/images/I/41JoC4r8JDL._SX322_BO1,204,203,200_.jpg",
+     category:"Health, Family & Personal Development",
+     authorName:"Penguin",
+     pages:"132",
+     publishedDate:"26 October 2020",
+     addeddate:"4 November 2020",
+     bookCount:150,
+     price:111
+},
+
    
 ];
 
