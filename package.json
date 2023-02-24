@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
-    "@mui/material": "^5.11.8"
+    "@mui/material": "^5.11.8",
+    "react-toastify": "^9.1.1"
   }
 }
