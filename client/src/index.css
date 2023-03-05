@@ -108,7 +108,6 @@ select {
 }
 
 input {
-  height: 6vh;
   margin-top: 20px ;
   box-shadow: none !important;
   padding: 2px;

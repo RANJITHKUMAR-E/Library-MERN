@@ -1,32 +1,6 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 
 export default function LoginPage() {
-
-  const [email, setmail] = useState("");
-  const [password, setpassword] = useState("");
-
-  const submitHandler = async () => {
-    if (
-      !email ||
-      !password 
-    ) {
-      window.alert("Fill all the required fields before submit ❗");
-    } else {
-      const userData = {
-        email,
-        password,
-      };
-      window.alert("Form submitted successfully ✔");
-      try {
-        const response = await axios.post("/api/user/login", userData);
-        console.log(response);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-  };
-
   return (
     <>
       <div className="row justify-content-center mt-5">
@@ -59,25 +33,17 @@ export default function LoginPage() {
               }}
             >
               <input
-                type="email"
+                type="text"
                 required
                 placeholder="Email"
                 className="form-control text-center d-inline-flex p-2"
-                value={email}
-                onChange={(e) => {
-                  setmail(e.target.value);
-                }}
               />
 
               <input
-                type="password"
+                type="text"
                 required
                 placeholder="Password"
                 className="form-control text-center d-inline-flex p-2"
-                value={password}
-                onChange={(e) => {
-                  setpassword(e.target.value);
-                }}
               />
               <h5
                 className="m-2"
@@ -99,7 +65,7 @@ export default function LoginPage() {
                   Click Here
                 </a>
               </h5>
-              <button className="btn mt-2" onClick={submitHandler}>Login</button>
+              <button className="btn mt-2">Login</button>
               <br />
               <h5
                 className="m-2"

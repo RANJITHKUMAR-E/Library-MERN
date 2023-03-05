@@ -35,52 +35,41 @@ exports.signup=async (req, res) =>
 
 exports.login=async (req, res) =>
 {
-    console.log(req.body)
-    const {email, password}=req.body;
-    if(!email||!password) {
+    const {rollNo, password}=req.body;
+
+    if(!rollNo||!password) {
         res.status(400).json({
             status: "Login Failed !",
             message: "Provide both RollNo & Password"
         });
     }
     try {
-        var user=await userModel.findOne({eMail: email});
-        if(!user||user.length<1) {
+        const user=await userModel.findOne({rollNo: rollNo});
+        console.log(user.length)
+        if(user.length<1) {
             return res.status(400).json({
                 status: "Login Failed",
-                message: "Invalid Email or Password"
+                message: "Invalid Roll number or Password"
             })
         }
         if(!await bcrypt.compare(password, user.password)) {
             return res.status(400).json({
                 status: "Login Failed",
-                message: "Invalid Email or Password"
+                message: "Invalid Roll number or Password"
             })
         }
-        const token=jwt.sign({email}, process.env.JWT_KEY, {expiresIn: process.env.JWT_EXPIRES})
+
+        const token=jwt.sign({rollNo}, process.env.JWT_KEY, {expiresIn: process.env.JWT_EXPIRES})
 
         res.status(200).json({
             status: "Login Success",
             token,
-            userData: {
-                id: user._id,
-                userName: user.userName,
-                rollNo: user.rollNo,
-                eMail: user.eMail,
-                Mobile: user.Mobile,
-                photo: user.photo,
-                department: user.department,
-                age: user.age,
-                booksBorrowed: user.booksBorrowed,
-                pendingFine: user.pendingFine,
-                isAdmin: user.isAdmin
-            }
-
+            userName: user.userName
         })
     }
     catch(error) {
         console.log(error)
-        res.status(402).json({
+        res.status(400).json({
             status: "Error",
             error: {error}
         });

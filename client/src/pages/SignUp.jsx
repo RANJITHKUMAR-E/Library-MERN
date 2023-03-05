@@ -193,7 +193,7 @@ export default function SignUpPage() {
                 <br />
                 Already User?{" "}
                 <a
-                  href="/login"
+                  href="/register"
                   style={{
                     textDecoration: "none",
                     color: "rgb(0, 0, 0)",

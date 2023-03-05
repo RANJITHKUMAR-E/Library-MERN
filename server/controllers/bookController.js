@@ -21,13 +21,12 @@ exports.getAllBook=async(req, res) =>
 exports.createBook=async(req, res) =>
 {
     const data=req.body;
-    console.log(data)
     try{
         const newBook=new bookModel(data);
-        const resp=await newBook.save();
+        await newBook.save();
         res.status(200).json({
             message: "Book Created successfully 😌",
-            data: resp,
+            data: data,
         });
     }
     catch(error){
@@ -41,7 +40,7 @@ exports.createBook=async(req, res) =>
 exports.getBook=async(req, res) =>
 {
     try{
-        const book=await bookModel.find({_id: req.params.id});
+        const book=await bookModel.find({_id: req.params.id})
         res.status(200).json({
             status:"Success ",
             data:book
