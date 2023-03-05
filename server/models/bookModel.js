@@ -5,7 +5,11 @@ const bookSchema=mongoose.Schema({
     description: {type: String, require},
     bookImage:{type:String,require},
     category:{type:String,require},
+<<<<<<< HEAD
     authorName: {type: String, require},
+=======
+    authorName:{type:String,require},
+>>>>>>> origin/Mowligha
     pages: {type: String, require},
     publishedDate:{type:String,require},
     addedDate: {type: Date, "default": Date.now},
