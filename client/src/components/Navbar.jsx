@@ -34,6 +34,21 @@ function Navbar() {
     setAnchorElUser(null);
   };
 
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location = "/login";
+  };
+
+  const showProfile = () => {
+    window.location = "/profile";
+  };
+
+  const showDashboard = () => {
+    window.location = "/dashboard";
+  };
+
+  const user = JSON.parse(localStorage.getItem("userData"));
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -126,7 +141,8 @@ function Navbar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                {}
+                <Avatar alt="Remy Sharp" src="" />
               </IconButton>
             </Tooltip>
             <Menu
