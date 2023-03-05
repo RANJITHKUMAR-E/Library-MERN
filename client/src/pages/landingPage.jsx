@@ -2,14 +2,17 @@ import React from 'react'
 import '../App.css';
 import Navbar from '../components/Navbar';
 import Card from '../components/Card';
+
 const landingPage = () => {
   return (
     <>
     <Navbar/>
     <h1 className='text-center my-5'>Recently Added</h1>
-   
+    <div className="div container">
+      <div className="row">
         <Card/>
-     
+      </div>
+    </div>
     <h1 className='text-center my-5 ms-5'>Available Books</h1>
     {/* <form class="text-center col-md-4 me-6 ms-5" role="search">
         <input class="text-center form-control me-2 ms-5" type="search" placeholder="Search " aria-label="Search"/>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function SignUpPage() {
@@ -31,7 +31,7 @@ export default function SignUpPage() {
       !cpassword
     ) {
       window.alert("Fill all the required fields before submit ❗");
-    } else if (password !== cpassword) {
+    } else if (password != cpassword) {
       window.alert("Password not matched ❗");
     } else {
       const userData = {
@@ -193,7 +193,7 @@ export default function SignUpPage() {
                 <br />
                 Already User?{" "}
                 <a
-                  href="/register"
+                  href="/login"
                   style={{
                     textDecoration: "none",
                     color: "rgb(0, 0, 0)",

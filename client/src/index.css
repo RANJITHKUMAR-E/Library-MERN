@@ -108,6 +108,7 @@ select {
 }
 
 input {
+  height: 6vh;
   margin-top: 20px ;
   box-shadow: none !important;
   padding: 2px;
@@ -120,25 +121,25 @@ input {
   height: 50px;
   background-color: #fff;
   padding: 10px;
-  /* border: 2px solid black; */
+  border: 2px solid black;
 }
 
 .search-input{
 
   color: white;
   border:0;
-  /* outline: 0; */
+  outline: 0;
   background: none;
   width: 0;
-  margin-top:  0px !important;
+  /* margin-top:5px; */
   caret-color:transparent;
-  line-height: 10px;
+  /* line-height: 40px; */
   transition: width 0.4s linear;
 
 }
 
 .search .search-input{
-  /* padding: 0px 10px; */
+  /* padding: 0 10px; */
   width: 550px;
   caret-color: #536bf6;
   font-size: 21px;
@@ -150,7 +151,6 @@ input {
 .search:hover>.search-icon{
   background:#1A237E;
   color:#fff;
-  transform: scale(1.15);
 }
 .search-icon{
 
@@ -177,17 +177,3 @@ a:link{
   font-size: 1.2rem !important;
   color: blue !important;
 }
-.card{
-  margin-left: 20px;
-}
-.table{
-  margin-left: 100px;
-  margin-right: 150px;
-  border: 3px solid black;
-  height: 200px;
-  width: 1150px;
-}
-.thead-light{
-  background-color: rgb(219, 215, 215);
-}
-
