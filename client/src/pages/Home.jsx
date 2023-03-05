@@ -3,7 +3,6 @@ import { data } from "../Data/Data.js";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import emailjs from "@emailjs/browser";
 
 import "./Home.css";
 
@@ -48,22 +47,22 @@ const Home = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_3mq7gs5",
-        "template_zika8db",
-        form.current,
-        "CCPljq9hfAuSSenoW"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert("message sent");
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    //   emailjs
+    //     .sendForm(
+    //       "service_3mq7gs5",
+    //       "template_zika8db",
+    //       form.current,
+    //       "CCPljq9hfAuSSenoW"
+    //     )
+    //     .then(
+    //       (result) => {
+    //         console.log(result.text);
+    //         alert("message sent");
+    //       },
+    //       (error) => {
+    //         console.log(error.text);
+    //       }
+    //     );
   };
 
   return (

@@ -4,12 +4,8 @@ const bookSchema=mongoose.Schema({
     bookName: {type: String, require},
     description: {type: String, require},
     bookImage:{type:String,require},
-    category:{type:String,require},
-<<<<<<< HEAD
+    category: {type: String, require},
     authorName: {type: String, require},
-=======
-    authorName:{type:String,require},
->>>>>>> origin/Mowligha
     pages: {type: String, require},
     publishedDate:{type:String,require},
     addedDate: {type: Date, "default": Date.now},
