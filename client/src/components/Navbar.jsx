@@ -10,8 +10,9 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import { Link } from "react-router-dom";
 
-const pages = ["Books", "Your Library","History","Contact Us"];
+const pages = ["Books", "Your Library", "History", "Contact Us"];
 const settings = ["Profile", "Dashboard", "Logout"];
 
 function Navbar() {
@@ -163,8 +164,10 @@ function Navbar() {
               <MenuItem onClick={showProfile}>
                 <Typography textAlign="center">Profile</Typography>
               </MenuItem>
-              <MenuItem onClick={showDashboard}>
-                <Typography textAlign="center">Dashboard</Typography>
+              <MenuItem>
+                <Typography textAlign="center">
+                  <Link to="/dashboard">Dashboard</Link>
+                </Typography>
               </MenuItem>
               <MenuItem onClick={handleLogout}>
                 <Typography textAlign="center">Logout</Typography>
