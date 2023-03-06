@@ -144,7 +144,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-           <Link to="">LOGO</Link>
+            <Link to="">LOGO</Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button>
@@ -208,6 +208,11 @@ function Navbar() {
               <MenuItem>
                 <Typography textAlign="center">
                   <Link to="/dashboard">Dashboard</Link>
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography textAlign="center">
+                  <Link to="/login">Login</Link>
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleLogout}>
