@@ -4,7 +4,7 @@ const bookSchema=mongoose.Schema({
     bookName: {type: String, require},
     description: {type: String, require},
     bookImage:{type:String,require},
-    category:{type:String,require},
+    category: {type: String, require},
     authorName: {type: String, require},
     pages: {type: String, require},
     publishedDate:{type:String,require},

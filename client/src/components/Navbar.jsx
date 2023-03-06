@@ -10,9 +10,8 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import { Link } from "react-router-dom";
 
-const pages = ["Books", "Your Library","History","Contact Us"];
-const settings = ["Profile", "Dashboard", "Logout"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -32,6 +31,21 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location = "/login";
+  };
+
+  const showProfile = () => {
+    window.location = "/profile";
+  };
+
+  const showDashboard = () => {
+    window.location = "/dashboard";
+  };
+
+  const user = JSON.parse(localStorage.getItem("userData"));
 
   return (
     <AppBar position="static">
@@ -84,11 +98,35 @@ function Navbar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem>
+                <Typography textAlign="center">
+                  <Link to="books" className="text-white font-weight-bold">
+                    Books
+                  </Link>
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography textAlign="center">
+                  <Link to="library" className="text-white font-weight-bold">
+                    Your Library
+                  </Link>
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography textAlign="center">
+                  <Link to="history" className="text-white font-weight-bold">
+                    History
+                  </Link>
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography
+                  textAlign="center"
+                  className="text-white font-weight-bold"
+                >
+                  Contact Us
+                </Typography>
+              </MenuItem>
             </Menu>
           </Box>
 
@@ -111,21 +149,43 @@ function Navbar() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+            <Button>
+              <Typography textAlign="center">
+                <Link to="books" className="text-white font-weight-bold">
+                  {" "}
+                  Books
+                </Link>
+              </Typography>
+            </Button>
+            <Button>
+              <Typography textAlign="center">
+                <Link to="library" className="text-white font-weight-bold">
+                  Your Library
+                </Link>
+              </Typography>
+            </Button>
+            <Button>
+              <Typography textAlign="center">
+                <Link to="history" className="text-white font-weight-bold">
+                  History
+                </Link>
+              </Typography>
+            </Button>
+            <Button>
+              <Typography
+                textAlign="center"
+                className="text-white font-weight-bold"
               >
-                {page}
-              </Button>
-            ))}
+                Contact Us
+              </Typography>
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                {}
+                <Avatar alt="Remy Sharp" src="" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -144,11 +204,17 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem onClick={showProfile}>
+                <Typography textAlign="center">Profile</Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography textAlign="center">
+                  <Link to="/dashboard">Dashboard</Link>
+                </Typography>
+              </MenuItem>
+              <MenuItem onClick={handleLogout}>
+                <Typography textAlign="center">Logout</Typography>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>
