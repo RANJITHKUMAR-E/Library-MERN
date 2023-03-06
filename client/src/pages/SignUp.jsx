@@ -191,16 +191,7 @@ export default function SignUpPage() {
               >
                 {" "}
                 <br />
-                Already User?{" "}
-                <a
-                  href="/login"
-                  style={{
-                    textDecoration: "none",
-                    color: "rgb(0, 0, 0)",
-                  }}
-                >
-                  Login
-                </a>
+                Already User? <Link to="/login">Login</Link>
               </h5>
             </div>
           </div>

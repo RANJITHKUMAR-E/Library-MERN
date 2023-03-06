@@ -69,9 +69,9 @@ export default function AdminDashboard() {
             <Link className="linkStyle" to="/dashboard/users">
               <Button onClick={getUsers}>Users List</Button>
             </Link>
-            <a className="linkStyle" href="/dashboard/books">
+            <Link className="linkStyle" to="/dashboard/books">
               <Button onClick={getBooks}>Book List</Button>
-            </a>
+            </Link>
             <Link className="linkStyle" to="/dashboard/addBook">
               <Button>Add Book</Button>
             </Link>
