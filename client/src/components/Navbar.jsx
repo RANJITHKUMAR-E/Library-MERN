@@ -12,8 +12,6 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 
-const pages = ["Books", "Your Library", "History", "Contact Us"];
-const settings = ["Profile", "Dashboard", "Logout"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -100,11 +98,35 @@ function Navbar() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem>
+                <Typography textAlign="center">
+                  <Link to="books" className="text-white font-weight-bold">
+                    Books
+                  </Link>
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography textAlign="center">
+                  <Link to="library" className="text-white font-weight-bold">
+                    Your Library
+                  </Link>
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography textAlign="center">
+                  <Link to="history" className="text-white font-weight-bold">
+                    History
+                  </Link>
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography
+                  textAlign="center"
+                  className="text-white font-weight-bold"
+                >
+                  Contact Us
+                </Typography>
+              </MenuItem>
             </Menu>
           </Box>
 
@@ -127,15 +149,36 @@ function Navbar() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+            <Button>
+              <Typography textAlign="center">
+                <Link to="books" className="text-white font-weight-bold">
+                  {" "}
+                  Books
+                </Link>
+              </Typography>
+            </Button>
+            <Button>
+              <Typography textAlign="center">
+                <Link to="library" className="text-white font-weight-bold">
+                  Your Library
+                </Link>
+              </Typography>
+            </Button>
+            <Button>
+              <Typography textAlign="center">
+                <Link to="history" className="text-white font-weight-bold">
+                  History
+                </Link>
+              </Typography>
+            </Button>
+            <Button>
+              <Typography
+                textAlign="center"
+                className="text-white font-weight-bold"
               >
-                {page}
-              </Button>
-            ))}
+                Contact Us
+              </Typography>
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

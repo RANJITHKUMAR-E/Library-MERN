@@ -11,18 +11,21 @@ import Navbar from './components/Navbar';
 import AdminDashboard from './pages/Admin/adminDashboard';
 import AddBook from './pages/Admin/AddBook';
 import Profile from './pages/Profile';
+import Library from './pages/Library';
+import LandingPage from './pages/landingPage';
 
 const App=() =>
 {
   return (
     <>
-      <Navbar />
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/login" exact element={<Login />} />
           <Route path="/signup" exact element={<SignUp />} />
           <Route path="/profile" exact element={<Profile />} />
+          <Route path="/library" exact element={<Library />} />
           <Route path="/dashboard/*" exact element={<AdminDashboard />} />
           <Route path="/dashboard/addBook" exact element={<AddBook />} />
           <Route path="*" element={<Home />} />

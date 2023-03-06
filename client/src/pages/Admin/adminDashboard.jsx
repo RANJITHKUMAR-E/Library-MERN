@@ -5,6 +5,7 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import BookList from "./bookList";
 import UserList from "./userList";
+import History from "./History";
 
 export default function AdminDashboard() {
   const [users, setUsers] = useState({});
@@ -83,6 +84,7 @@ export default function AdminDashboard() {
             <Routes>
               <Route path="books" exact element={<BookList books={books} />} />
               <Route path="users" exact element={<UserList users={users} />} />
+              <Route path="history" exact element={<History />} />
             </Routes>
           </div>
         </div>
