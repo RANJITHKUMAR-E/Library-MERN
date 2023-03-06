@@ -34,7 +34,9 @@ export default function AdminDashboard() {
 
   const getBooks = async () => {
     try {
-      const response = await axios.get("/api/book/");
+      const response = await axios.get(
+        "https://node-library.onrender.com/api/book/"
+      );
       setBooks(response.data.data);
       console.log(books);
     } catch (error) {
@@ -43,7 +45,9 @@ export default function AdminDashboard() {
   };
   const getUsers = async () => {
     try {
-      const response = await axios.get("/api/user/");
+      const response = await axios.get(
+        "https://node-library.onrender.com/api/user/"
+      );
       setUsers(response.data.data);
       console.log(users);
     } catch (error) {
