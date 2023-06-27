@@ -34,7 +34,9 @@ export default function AdminDashboard() {
 
   const getBooks = async () => {
     try {
-      const response = await axios.get("/api/book/");
+      const response = await axios.get(
+        "https://node-library.onrender.com/api/book/"
+      );
       setBooks(response.data.data);
       console.log(books);
     } catch (error) {
@@ -43,7 +45,9 @@ export default function AdminDashboard() {
   };
   const getUsers = async () => {
     try {
-      const response = await axios.get("/api/user/");
+      const response = await axios.get(
+        "https://node-library.onrender.com/api/user/"
+      );
       setUsers(response.data.data);
       console.log(users);
     } catch (error) {
@@ -69,9 +73,9 @@ export default function AdminDashboard() {
             <Link className="linkStyle" to="/dashboard/users">
               <Button onClick={getUsers}>Users List</Button>
             </Link>
-            <a className="linkStyle" href="/dashboard/books">
+            <Link className="linkStyle" to="/dashboard/books">
               <Button onClick={getBooks}>Book List</Button>
-            </a>
+            </Link>
             <Link className="linkStyle" to="/dashboard/addBook">
               <Button>Add Book</Button>
             </Link>

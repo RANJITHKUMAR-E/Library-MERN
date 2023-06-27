@@ -15,6 +15,7 @@ exports.signup=async (req, res) =>
             })
         }
         data.password=await bcrypt.hash(req.body.password, 12);
+        console.log(data)
         const newUser=new userModel(data);
         await newUser.save();
 

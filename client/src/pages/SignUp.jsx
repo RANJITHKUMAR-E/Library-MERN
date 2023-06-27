@@ -2,31 +2,21 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function SignUpPage() {
-  // const [userData, setData] = useState({
-  //   name: "",
-  //   rollNo: "",
-  //   email: "",
-  //   mobile: "",
-  //   department: "",
-  //   password: "",
-  //   confirmPassWord: "",
-  // });
-
-  const [name, setname] = useState("");
+  const [userName, setuserName] = useState("");
   const [rollNo, setRollNo] = useState("");
-  const [email, setmail] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [dept, setDept] = useState("");
+  const [eMail, setmail] = useState("");
+  const [Mobile, setMobile] = useState("");
+  const [department, setDepartment] = useState("");
   const [password, setpassword] = useState("");
   const [cpassword, setcpassword] = useState("");
 
   const submitHandler = async () => {
     if (
-      !name ||
+      !userName ||
       !rollNo ||
-      !email ||
-      !mobile ||
-      !dept ||
+      !eMail ||
+      !Mobile ||
+      !department ||
       !password ||
       !cpassword
     ) {
@@ -35,16 +25,18 @@ export default function SignUpPage() {
       window.alert("Password not matched ❗");
     } else {
       const userData = {
-        name,
+        userName,
         rollNo,
         password,
-        email,
-        mobile,
-        dept,
+        eMail,
+        Mobile,
+        department,
       };
-      window.alert("Form submitted successfully ✔");
       try {
-        const response = await axios.post("/api/user/signup", userData);
+        const response = await axios.post(
+          "http://localhost:5000/api/user/signup",
+          userData
+        );
         console.log(response);
       } catch (error) {
         console.log(error);
@@ -96,11 +88,11 @@ export default function SignUpPage() {
               <input
                 type="text"
                 required
-                placeholder="Name"
+                placeholder="userName"
                 className="form-control  d-inline-flex p-2 "
-                value={name}
+                value={userName}
                 onChange={(e) => {
-                  setname(e.target.value);
+                  setuserName(e.target.value);
                 }}
               />
 
@@ -116,11 +108,11 @@ export default function SignUpPage() {
               />
 
               <input
-                type="email"
+                type="eMail"
                 required
-                placeholder="Email-Id"
+                placeholder="EMail-Id"
                 className="form-control d-inline-flex p-2"
-                value={email}
+                value={eMail}
                 onChange={(e) => {
                   setmail(e.target.value);
                 }}
@@ -131,7 +123,7 @@ export default function SignUpPage() {
                 required
                 placeholder="Mobile Number"
                 className="form-control d-inline-flex p-2"
-                value={mobile}
+                value={Mobile}
                 onChange={(e) => {
                   setMobile(e.target.value);
                 }}
@@ -141,7 +133,7 @@ export default function SignUpPage() {
                 className="form-select d-inline-flex p-2"
                 required
                 onChange={(e) => {
-                  setDept(e.target.value);
+                  setDepartment(e.target.value);
                 }}
               >
                 <option value="" disabled selected>
