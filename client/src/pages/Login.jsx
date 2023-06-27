@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
   import { ToastContainer, toast } from "react-toastify";
   import "react-toastify/dist/ReactToastify.css";
   import Alerts from "../components/Alert";
@@ -120,16 +121,7 @@ import axios from "axios";
                     fontWeight: "bold",
                   }}
                 >
-                  Forgot Password ?{" "}
-                  <a
-                    href="/signup"
-                    style={{
-                      textDecoration: "none",
-                      color: "rgba(0, 0, 0, 0.4)",
-                    }}
-                  >
-                    Click Here
-                  </a>
+                  Forgot Password ? <Link to="/signup">Click Here</Link>
                 </h5>
                 <button className="btn mt-2" onClick={submitHandler}>
                   <b>Login</b>
@@ -146,16 +138,7 @@ import axios from "axios";
                     fontWeight: "bold",
                   }}
                 >
-                  New User?{" "}
-                  <a
-                    href="/signup"
-                    style={{
-                      textDecoration: "none",
-                      color: "rgba(0, 0, 0, 0.4)",
-                    }}
-                  >
-                    Create Account
-                  </a>
+                  New User? <Link to="/signup">Create Account</Link>
                 </h5>
               </div>
             </div>

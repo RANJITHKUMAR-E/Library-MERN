@@ -55,7 +55,6 @@ function Navbar() {
             variant="h6"
             noWrap
             component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -66,7 +65,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            Library
+            <Link to="/">Library</Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -134,7 +133,6 @@ function Navbar() {
             variant="h5"
             noWrap
             component="a"
-            href=""
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -146,7 +144,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            <Link to="">LOGO</Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button>
@@ -210,6 +208,11 @@ function Navbar() {
               <MenuItem>
                 <Typography textAlign="center">
                   <Link to="/dashboard">Dashboard</Link>
+                </Typography>
+              </MenuItem>
+              <MenuItem>
+                <Typography textAlign="center">
+                  <Link to="/login">Login</Link>
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleLogout}>

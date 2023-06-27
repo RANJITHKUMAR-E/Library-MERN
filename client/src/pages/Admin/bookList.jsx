@@ -65,7 +65,7 @@ export default function BookList(props) {
                       onClick={async () => {
                         try {
                           const resp = await axios.delete(
-                            `/api/book/${book._id}`
+                            `https://node-library.onrender.com/api/book/${book._id}`
                           );
                           console.log(resp);
                           window.location.reload(false);
